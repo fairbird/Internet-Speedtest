@@ -26,17 +26,20 @@ HD = getDesktop(0).size()
 PluginLanguageDomain = "speedtest"
 PluginLanguagePath = "/usr/lib/enigma2/python/Plugins/Extensions/InternetSpeedTest/locale"
 
+
 def localeInit():
     lang = language.getLanguage()[:2]
     environ["LANGUAGE"] = lang
     gettext.bindtextdomain(PluginLanguageDomain, PluginLanguagePath)
     gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE, ""))
 
+
 def _(txt):
     t = gettext.dgettext(PluginLanguageDomain, txt)
     if t == txt:
         t = gettext.dgettext("enigma2", txt)
     return t
+
 
 localeInit()
 language.addCallback(localeInit)
@@ -46,6 +49,7 @@ try:
     addFont("%s/Roboto-Regular.ttf" % font, "speedtest", 100, 1)
 except Exception as ex:
     print(ex)
+
 
 class internetspeedtest(Screen):
     def __init__(self, session):
@@ -129,8 +133,10 @@ class internetspeedtest(Screen):
         self.container.dataAvail.remove(self.dataAvail)
         self.close()
 
+
 def main(session, **kwargs):
     session.open(internetspeedtest)
+
 
 def Plugins(**kwargs):
     list = []

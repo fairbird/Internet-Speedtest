@@ -22,6 +22,7 @@ from Components.Converter.Converter import Converter
 from Components.Element import cached
 from Components.Converter.Poll import Poll
 
+
 class SPNetSpeedInfo(Poll, Converter, object):
 	RCL = 0 			# Receive Lan in Megabit/s = Geschwindigkeit/Bandbreite
 	TML = 1				# Transmit Lan in Megabit/s = Geschwindigkeit/Bandbreite
