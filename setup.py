@@ -3,10 +3,10 @@
 from distutils.core import setup
 
 pkg = 'Extensions.InternetSpeedTest'
-setup(name='enigma2-plugin-extensions-internet-speedtest',
+setup(name='enigma2-plugin-extensions-internetspeedtest',
        version='1.0',
-       description='Speedtest for enigma2',
+       description='Internet speed test for enigma2',
        packages=[pkg],
        package_dir={pkg: 'usr'},
-       package_data={pkg: ['*.png', '*/*.png']},
+       package_data={pkg: ['*.png', '*/*.png', '*/locale/*/LC_MESSAGES/*.mo']},
       )
