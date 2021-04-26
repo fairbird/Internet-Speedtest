@@ -627,7 +627,7 @@ class GzipDecodedResponse(GZIP_BASE):
                                      'but gzip support is not available')
         IO = BytesIO or StringIO
         self.io = IO()
-        while 1:
+        while True:
             chunk = response.read(1024)
             if len(chunk) == 0:
                 break
@@ -1134,7 +1134,7 @@ class Speedtest(object):
 
         stream = get_response_stream(uh)
 
-        while 1:
+        while True:
             try:
                 configxml_list.append(stream.read(1024))
             except (OSError, EOFError):
@@ -1282,7 +1282,7 @@ class Speedtest(object):
                 stream = get_response_stream(uh)
 
                 serversxml_list = []
-                while 1:
+                while True:
                     try:
                         serversxml_list.append(stream.read(1024))
                     except (OSError, EOFError):
