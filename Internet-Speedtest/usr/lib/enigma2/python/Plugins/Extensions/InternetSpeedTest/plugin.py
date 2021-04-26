@@ -67,7 +67,7 @@ class internetspeedtest(Screen):
         self["upload"] = Label(" ")
         self["key_red"] = Button(_("Exit"))
         self["key_green"] = Button(_("Repeat test"))
-        self["actions"] = ActionMap(["OkCancelActions","ColorActions"],{"cancel": self.exit,"red": self.exit,"green": self.testagain}, -1)
+        self["actions"] = ActionMap(["OkCancelActions", "ColorActions"], {"cancel": self.exit, "red": self.exit, "green": self.testagain}, -1)
         self.finished = False
         self.data = ""
         self.container = eConsoleAppContainer()
@@ -82,7 +82,7 @@ class internetspeedtest(Screen):
         self.container.execute(cmd)
 
     def action(self, retval):
-        print("retval",retval)
+        print("retval", retval)
         print("finished test")
         self.finished = True
 
@@ -104,7 +104,7 @@ class internetspeedtest(Screen):
                         ping = ""
                     self["ping"].setText(str(ping))
                 if "Testing download from" in part:
-                    ip = part.split("Testing download from")[1].split(")")[0].replace("(","").strip()
+                    ip = part.split("Testing download from")[1].split(")")[0].replace("(", "").strip()
                     self["ip"].setText(str(ip))
                 if "Download:" in rstr:
                     try:
