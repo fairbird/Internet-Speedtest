@@ -6,25 +6,24 @@ import re
 from Components.Button import Button
 from os import remove, environ, chmod, path
 import gettext
-from enigma import getDesktop, eConsoleAppContainer
+from enigma import getDesktop, eConsoleAppContainer, getPyExt
 from Components.Language import language
-from Tools.Directories import resolveFilename, SCOPE_LANGUAGE
+from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Components.ActionMap import ActionMap
-from Components.Pixmap import Pixmap
 from Components.Label import Label
 
-plugin_path = "/usr/lib/enigma2/python/Plugins/Extensions/InternetSpeedTest/speedtest.py"
-font = "/usr/lib/enigma2/python/Plugins/Extensions/InternetSpeedTest/fonts"
-skin_path = "/usr/lib/enigma2/python/Plugins/Extensions/InternetSpeedTest/"
-cmd = "python " + plugin_path
+plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/InternetSpeedTest/speedtest.")
+font = resolveFilename(SCOPE_PLUGINS, "Extensions/InternetSpeedTest/fonts")
+skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/InternetSpeedTest/")
+cmd = "python " + plugin_path + getPyExt()
 if path.exists(plugin_path):
     chmod(plugin_path, 0o755)
 HD = getDesktop(0).size()
 
 PluginLanguageDomain = "speedtest"
-PluginLanguagePath = "/usr/lib/enigma2/python/Plugins/Extensions/InternetSpeedTest/locale"
+PluginLanguagePath = resolveFilename(SCOPE_PLUGINS, "Extensions/InternetSpeedTest/locale")
 
 
 def localeInit():
