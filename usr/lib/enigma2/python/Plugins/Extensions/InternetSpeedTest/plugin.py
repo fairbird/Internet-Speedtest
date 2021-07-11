@@ -133,15 +133,12 @@ class internetspeedtest(Screen):
         self.close()
 
 
-def main(session, **kwargs):
+def main(session, iface):
     session.open(internetspeedtest)
+
+def callFunction(iface):
+    return main
 
 
 def Plugins(**kwargs):
-    list = []
-    if HD.width() > 1280:
-        list.append(PluginDescriptor(name=("Internet Speed Test"), description=_("Test your internet speed"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="speedtestfhd.png", fnc=main))
-    else:
-        list.append(PluginDescriptor(name=("Internet Speed Test"), description=_("Test your internet speed"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="speedtest.png", fnc=main))
-    list.append(PluginDescriptor(name=("Internet Speed Test"), description=_("Test your internet speed"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
-    return list
+    return PluginDescriptor(name=_("InternetSpeedTest"), description=_("Internet Speed Test") + "\n", where=PluginDescriptor.WHERE_NETWORKSETUP, needsRestart=False, fnc={"ifaceSupported": callFunction, "menuEntryName": lambda x: _("InternetSpeedTest"), "menuEntryDescription": lambda x: _("Internet Speed Test...") + "\n"})
