@@ -136,6 +136,7 @@ class internetspeedtest(Screen):
 def main(session, iface):
     session.open(internetspeedtest)
 
+
 def callFunction(iface):
     return main
 
