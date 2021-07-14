@@ -43,12 +43,6 @@ def _(txt):
 localeInit()
 language.addCallback(localeInit)
 
-from enigma import addFont
-try:
-    addFont("%s/Roboto-Regular.ttf" % font, "speedtest", 100, 1)
-except Exception as ex:
-    print(ex)
-
 
 class internetspeedtest(Screen):
     def __init__(self, session):
