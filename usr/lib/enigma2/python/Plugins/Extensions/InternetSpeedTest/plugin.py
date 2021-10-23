@@ -6,7 +6,7 @@ import re
 from Components.Button import Button
 from os import remove, environ, chmod, path
 import gettext
-from enigma import getDesktop, eConsoleAppContainer, getPyExt
+from enigma import getDesktop, eConsoleAppContainer
 from Components.Language import language
 from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from Plugins.Plugin import PluginDescriptor
@@ -17,7 +17,7 @@ from Components.Label import Label
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/InternetSpeedTest/speedtest.")
 font = resolveFilename(SCOPE_PLUGINS, "Extensions/InternetSpeedTest/fonts")
 skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/InternetSpeedTest/")
-cmd = "python " + plugin_path + getPyExt()
+cmd = "python " + plugin_path + ".pyo"
 if path.exists(plugin_path):
     chmod(plugin_path, 0o755)
 HD = getDesktop(0).size()
