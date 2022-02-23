@@ -1,4 +1,4 @@
-Internet Speedtest [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+Internet Speedtest [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) [![internetspeedtest](https://github.com/OpenVisionE2/Internet-Speedtest/actions/workflows/internetspeedtest.yml/badge.svg)](https://github.com/OpenVisionE2/Internet-Speedtest/actions/workflows/internetspeedtest.yml) [![ovbot](https://github.com/OpenVisionE2/Internet-Speedtest/actions/workflows/ovbot.yml/badge.svg)](https://github.com/OpenVisionE2/Internet-Speedtest/actions/workflows/ovbot.yml)
 ==================
 Compatible with python2/3
 
