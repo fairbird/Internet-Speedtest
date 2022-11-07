@@ -468,7 +468,7 @@ class showresult(Screen):
 			pass
 
 
-def main(session, **kwargs):
+def main(session, iface):
 	session.open(internetspeedtest)
 
 
